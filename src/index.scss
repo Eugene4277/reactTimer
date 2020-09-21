@@ -1,0 +1,244 @@
+@import "~antd/dist/antd.css";
+
+@import url("https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap");
+
+$base-color: #f1635f;
+$base-darkcolor: #ca5350;
+$base-yellow: #ffc652;
+$form-field-color: #97403f;
+
+body {
+  margin: 0;
+
+  font-family: "Fugaz One", cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+label {
+  color: #fff !important;
+}
+
+.ant-layout {
+  height: 100vh;
+}
+
+.ant-layout-header {
+  height: 6rem;
+  padding: 1rem;
+}
+
+.ant-alert {
+  width: 25%;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+
+.trigger,
+.header-button {
+  font-size: 28px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.far {
+  font-size: 28px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: color 0.3s;
+  color: blue !important;
+}
+
+.trigger {
+  padding: 0 24px;
+}
+
+.icons {
+  padding: 0 1rem 0 0;
+}
+
+.header-button {
+  padding: 0 1rem 0 0;
+}
+
+.brand {
+  text-align: center;
+  margin: 1.5rem;
+
+  .logo {
+    height: 40px;
+    margin-right: 0.5rem;
+  }
+
+  .brand-name {
+    display: inline-block;
+    color: #fff;
+    font-size: 2rem;
+    margin-top: 0.5rem;
+  }
+}
+
+.icons {
+  float: right;
+}
+
+.site-layout .site-layout-background {
+  background: #fff;
+}
+
+.ant-layout-sider {
+  width: 350px !important;
+  flex: 0 0 350px !important;
+  max-width: 350px !important;
+  background-color: $base-darkcolor !important;
+}
+
+.ant-layout-sider-collapsed {
+  flex: 0 0 0px !important;
+  max-width: 0px !important;
+  min-width: 0px !important;
+  width: 0px !important;
+}
+
+.side-form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  padding: 0 1.5rem;
+  flex: 3 1 0%;
+
+  .form-input {
+    width: 100%;
+    background: $form-field-color;
+    border-style: none;
+    outline-style: none;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+    padding: 0.75rem;
+    border-radius: 2px;
+    transition-duration: 400ms;
+    margin-bottom: 1.25rem;
+  }
+}
+
+.ant-layout-content {
+  text-align: center;
+  align-items: center;
+}
+
+.edit-theme-button {
+  color: #fff;
+  font-size: 1.3rem;
+  float: right;
+  padding: 0;
+  margin-right: 0.3rem;
+}
+
+.edit-icon {
+  margin-right: 0.7rem;
+}
+
+.text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  position: relative;
+  z-index: 10;
+
+  .title {
+    font-size: 3rem;
+  }
+
+  .time {
+    font-size: 7rem;
+  }
+
+  .description {
+    color: $base-yellow;
+    font-size: 2rem;
+  }
+}
+
+.theme-primary {
+  color: $base-color;
+}
+
+.color-input {
+  border: none;
+  // width: 50%;
+  height: 50px !important;
+  padding: 0.5rem;
+  background: $form-field-color;
+}
+
+.ant-modal-header,
+.ant-modal-body,
+.ant-modal-footer {
+  background: $base-darkcolor;
+}
+
+.ant-modal-header {
+  border-bottom: 0px;
+}
+
+.ant-modal-footer {
+  border-top: 0px;
+}
+
+.ant-modal-title {
+  color: #fff;
+}
+
+.modal-cancel-btn {
+  background: $base-darkcolor;
+  border: 0px;
+  color: #fff;
+}
+
+.modal-success-btn {
+  background: $base-yellow;
+  border: 0px;
+}
+
+.modal-cancel-btn:hover,
+.modal-cancel-btn:focus {
+  background: $base-color;
+  border: 0px;
+  color: #fff;
+}
+
+.modal-success-btn:hover,
+.modal-success-btn:focus {
+  background: $base-color;
+  border: 0px;
+  color: #fff;
+}
+
+.footer {
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  padding: 1.5rem;
+  font-size: 1rem;
+
+  .footer-link {
+    margin: 0 0.3rem;
+    color: $base-yellow;
+  }
+}
