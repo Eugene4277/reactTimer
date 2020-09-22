@@ -2,23 +2,24 @@ import React, { useState } from "react";
 import { Modal, Button, Form, Input } from "antd";
 
 function ModalTheme(props) {
-  const { visible, setVisible } = props;
+  const {
+    visible,
+    setVisible,
+    setPrimary,
+    setSecondary,
+    setBackground,
+  } = props;
   const [form] = Form.useForm();
-  const [primary, setPrimary] = useState("#f1635f");
-  const [secondary, setSecondary] = useState("#ffc652");
-  const [background, setBackground] = useState("#ffffff");
+
+  const [primaryColor, setPrimaryColor] = useState("#f1635f");
+  const [secondaryColor, setSecondaryColor] = useState("#ffc652");
+  const [backgroundColor, setBackgroundColor] = useState("#ffffff");
 
   const handleTheme = () => {
-    const primaryElements = document.querySelectorAll(".theme-primary");
-    [...primaryElements].map((elem) => (elem.style.color = primary));
+    setPrimary(primaryColor);
+    setSecondary(secondaryColor);
+    setBackground(backgroundColor);
 
-    const secondaryElements = document.querySelectorAll(".theme-secondary");
-    [...secondaryElements].map((elem) => (elem.style.color = secondary));
-
-    const backgroundElements = document.querySelectorAll(
-      ".site-layout-background"
-    );
-    [...backgroundElements].map((elem) => (elem.style.background = background));
     setVisible(false);
   };
 
@@ -51,24 +52,24 @@ function ModalTheme(props) {
           <Input
             type="color"
             className="form-input color-input"
-            value={primary}
-            onChange={(e) => setPrimary(e.target.value)}
+            value={primaryColor}
+            onChange={(e) => setPrimaryColor(e.target.value)}
           />
         </Form.Item>
         <Form.Item label="Secondary color">
           <Input
             type="color"
             className="form-input color-input"
-            value={secondary}
-            onChange={(e) => setSecondary(e.target.value)}
+            value={secondaryColor}
+            onChange={(e) => setSecondaryColor(e.target.value)}
           />
         </Form.Item>
         <Form.Item label="Background color">
           <Input
             type="color"
             className="form-input color-input"
-            value={background}
-            onChange={(e) => setBackground(e.target.value)}
+            value={backgroundColor}
+            onChange={(e) => setBackgroundColor(e.target.value)}
           />
         </Form.Item>
       </Form>

@@ -6,7 +6,16 @@ import ModalTheme from "./ModalTheme";
 function MyForm(props) {
   const [form] = Form.useForm();
   const [modalVisible, setModalVisible] = useState(false);
-  const { title, description, setTitle, setDescription, setTime } = props;
+  const {
+    title,
+    description,
+    setTitle,
+    setDescription,
+    setTime,
+    setPrimary,
+    setSecondary,
+    setBackground,
+  } = props;
   const [val, setVal] = useState("00:07");
 
   const handleTime = (value) => {
@@ -28,7 +37,13 @@ function MyForm(props) {
 
   return (
     <>
-      <ModalTheme visible={modalVisible} setVisible={setModalVisible} />
+      <ModalTheme
+        setPrimary={setPrimary}
+        setSecondary={setSecondary}
+        setBackground={setBackground}
+        visible={modalVisible}
+        setVisible={setModalVisible}
+      />
       <div className="form">
         <Form form={form} layout="vertical">
           <Form.Item label="Title" className="g">

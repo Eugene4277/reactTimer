@@ -4,12 +4,18 @@ import { MenuUnfoldOutlined, MenuFoldOutlined } from "@ant-design/icons";
 
 import MyForm from "./MyForm";
 import Brand from "./Brand";
+import TimerButtons from "./TimerButtons";
+import Footer from "./Footer";
 import Timer from "./Timer";
 
 const { Header, Sider, Content } = Layout;
 
 function Main(props) {
   const [collapsed, setCollapsed] = useState(false);
+
+  const [primary, setPrimary] = useState("#f1635f");
+  const [secondary, setSecondary] = useState("#ffc652");
+  const [background, setBackground] = useState("#ffffff");
 
   const [title, setTitle] = useState("Some title");
   const [description, setDescription] = useState("Some description");
@@ -32,47 +38,41 @@ function Main(props) {
               setTime={setTime}
               setDescription={setDescription}
               setTitle={setTitle}
+              setPrimary={setPrimary}
+              setSecondary={setSecondary}
+              setBackground={setBackground}
             />
-            <div className="footer">
-              Made with{" "}
-              <a className="footer-link" href="https://reactjs.org/">
-                {" "}
-                ReactJs{" "}
-              </a>{" "}
-              by
-              <a className="footer-link" href="https://github.com/Eugene4277">
-                {" "}
-                Eugene
-              </a>
-            </div>
+            <Footer />
           </div>
         )}
       </Sider>
       <Layout className="site-layout">
-        <Header className="site-layout-background">
+        <Header className="site-layout-background" style={{ background }}>
           {React.createElement(
             collapsed ? MenuUnfoldOutlined : MenuFoldOutlined,
             {
-              className: "trigger theme-primary",
+              className: "trigger",
               onClick: toggle,
+              style: { color: primary },
             }
           )}
-          <Timer time={time} setTime={setTime} />
+          <TimerButtons color={primary} time={time} setTime={setTime} />
         </Header>
         <Content
           className="site-layout-background"
           style={{
             padding: 24,
             minHeight: 280,
+            background,
           }}
         >
-          <div className="text">
-            <h1 className="title theme-primary">{title}</h1>
-            <h3 className="description theme-secondary">{description}</h3>
-            <p className="time theme-primary">
-              <b>{time}</b>
-            </p>
-          </div>
+          <Timer
+            title={title}
+            description={description}
+            time={time}
+            primaryColor={primary}
+            secondaryColor={secondary}
+          />
         </Content>
       </Layout>
     </Layout>
